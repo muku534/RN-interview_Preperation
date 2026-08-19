@@ -4,6 +4,22 @@ import { useState } from 'react';
 import styles from './Sidebar.module.css';
 
 const trackCategories = {
+  'plan': [
+    {
+      title: 'Study Roadmap',
+      topics: [
+        { id: 'plan-overview', title: 'Overview & Goals' },
+        { id: 'plan-day-1', title: 'Day 1: Foundation' },
+        { id: 'plan-day-2', title: 'Day 2: React Deeply' },
+        { id: 'plan-day-3', title: 'Day 3: Build the App' },
+        { id: 'plan-day-4', title: 'Day 4: REST & Redux' },
+        { id: 'plan-day-5', title: 'Day 5: Performance' },
+        { id: 'plan-day-6', title: 'Day 6: Production' },
+        { id: 'plan-day-7', title: 'Day 7: Interview' },
+        { id: 'plan-rules', title: 'Objectives & Rules' }
+      ]
+    }
+  ],
   'javascript': [
     {
       title: 'JavaScript Fundamentals',

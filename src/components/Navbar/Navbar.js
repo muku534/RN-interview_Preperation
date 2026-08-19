@@ -41,6 +41,7 @@ export default function Navbar({ toggleSidebar, isSidebarOpen, activeTrack, onTr
         </div>
 
         <div className={`${styles.rightSection} ${isMobileNavOpen ? styles.mobileNavOpen : ''}`}>
+          <a href="#plan" className={`${styles.navLink} ${activeTrack === 'plan' ? styles.active : ''}`} onClick={(e) => handleLinkClick(e, 'plan')}>Plan</a>
           <a href="#javascript" className={`${styles.navLink} ${activeTrack === 'javascript' ? styles.active : ''}`} onClick={(e) => handleLinkClick(e, 'javascript')}>JavaScript</a>
           <a href="#react-native" className={`${styles.navLink} ${activeTrack === 'react-native' ? styles.active : ''}`} onClick={(e) => handleLinkClick(e, 'react-native')}>React Native</a>
           <a href="#redux" className={`${styles.navLink} ${activeTrack === 'redux' ? styles.active : ''}`} onClick={(e) => handleLinkClickWithToast(e, 'redux', 'Redux')}>Redux</a>

@@ -16,8 +16,28 @@ import EveryMethod from '../Topics/EveryMethod';
 import IncludesMethod from '../Topics/IncludesMethod';
 import ReduceMethod from '../Topics/ReduceMethod';
 import ArrayMethodsSummary from '../Topics/ArrayMethodsSummary';
+import PlanOverview from '../Topics/PlanOverview';
+import PlanDay1 from '../Topics/PlanDay1';
+import PlanDay2 from '../Topics/PlanDay2';
+import PlanDay3 from '../Topics/PlanDay3';
+import PlanDay4 from '../Topics/PlanDay4';
+import PlanDay5 from '../Topics/PlanDay5';
+import PlanDay6 from '../Topics/PlanDay6';
+import PlanDay7 from '../Topics/PlanDay7';
+import PlanRules from '../Topics/PlanRules';
 
 const trackTopicsList = {
+  'plan': [
+    { id: 'plan-overview', title: 'Overview & Goals' },
+    { id: 'plan-day-1', title: 'Day 1: Foundation' },
+    { id: 'plan-day-2', title: 'Day 2: React Deeply' },
+    { id: 'plan-day-3', title: 'Day 3: Build the App' },
+    { id: 'plan-day-4', title: 'Day 4: REST & Redux' },
+    { id: 'plan-day-5', title: 'Day 5: Performance' },
+    { id: 'plan-day-6', title: 'Day 6: Production' },
+    { id: 'plan-day-7', title: 'Day 7: Interview' },
+    { id: 'plan-rules', title: 'Objectives & Rules' }
+  ],
   'javascript': [
     { id: 'js-map', title: 'map()' },
     { id: 'js-filter', title: 'filter()' },
@@ -60,6 +80,15 @@ export default function ContentArea({ activeTopic, setActiveTopic, activeTrack }
       case 'js-includes': return <IncludesMethod />;
       case 'js-reduce': return <ReduceMethod />;
       case 'js-summary': return <ArrayMethodsSummary />;
+      case 'plan-overview': return <PlanOverview />;
+      case 'plan-day-1': return <PlanDay1 />;
+      case 'plan-day-2': return <PlanDay2 />;
+      case 'plan-day-3': return <PlanDay3 />;
+      case 'plan-day-4': return <PlanDay4 />;
+      case 'plan-day-5': return <PlanDay5 />;
+      case 'plan-day-6': return <PlanDay6 />;
+      case 'plan-day-7': return <PlanDay7 />;
+      case 'plan-rules': return <PlanRules />;
       case 'old-arch': return <OldArchitecture />;
       case 'new-arch': return <NewArchitecture />;
       case 'threads': return <ThreadModel />;

@@ -16,6 +16,7 @@ export default function Home() {
   const handleTrackChange = (trackId) => {
     setActiveTrack(trackId);
     const defaultTopics = {
+      'plan': 'plan-overview',
       'javascript': 'js-map',
       'react-native': 'old-arch'
     };
