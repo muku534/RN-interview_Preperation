@@ -1,34 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Proper Deep Dark Theme */
+  --ifm-color-primary: #38bdf8; /* Vibrant Sky Blue for contrast */
+  --ifm-color-secondary: #1a1a1a;
+  --ifm-color-secondary-contrast-text: #ffffff;
+  
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-font-size-base: 115%; /* Increased base font size */
+  --ifm-line-height-base: 1.7;
+  
+  --ifm-background-color: #0d0d0d; /* True deep dark/black */
+  --ifm-font-color-base: #f5f5f5; /* Crisp white */
+  --ifm-font-color-base-inverse: #0d0d0d;
+  
+  --ifm-navbar-background-color: rgba(13, 13, 13, 0.9);
+  --ifm-navbar-link-color: #ffffff;
+  
+  --ifm-menu-color: #a3a3a3;
+  --ifm-menu-color-active: #38bdf8;
+  --ifm-menu-color-background-active: rgba(56, 189, 248, 0.1);
+  --ifm-menu-color-background-hover: rgba(255, 255, 255, 0.05);
+  
+  --ifm-toc-border-color: #262626;
+  --ifm-heading-color: #ffffff;
+  
+  --ifm-code-background: #171717;
+  --ifm-code-font-size: 95%;
 }
 
 * {
@@ -37,13 +35,98 @@ body {
   margin: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body {
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-family: var(--ifm-font-family-base);
+  font-size: var(--ifm-font-size-base);
+  line-height: var(--ifm-line-height-base);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Navbar Glassmorphism */
+nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ifm-heading-color);
+  font-weight: 800;
+  margin-top: 2rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #525252;
+}
+
+/* Premium Dark Admonitions */
+.admonition, .glass-card, .highlight-box {
+  border-left: 4px solid var(--ifm-color-primary);
+  background: #171717; /* Solid dark background */
+  padding: 24px;
+  margin-bottom: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-left: 4px solid var(--ifm-color-primary);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.admonition:hover, .glass-card:hover, .highlight-box:hover {
+  transform: translateY(-2px);
+}
+
+.highlight-box[style*="red"], .highlight-box[style*="#ef4444"] {
+  border-left-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.admonition-title {
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ifm-color-primary);
+}
+
+.admonition-content {
+  font-size: 1rem;
+}
+
+/* Enhancing code aesthetics */
+code {
+  color: var(--ifm-color-primary);
 }
