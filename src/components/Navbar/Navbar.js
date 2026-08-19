@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import styles from './Navbar.module.css';
 
-export default function Navbar({ toggleSidebar, isSidebarOpen }) {
+export default function Navbar({ toggleSidebar, isSidebarOpen, activeTrack, onTrackChange }) {
   const [toast, setToast] = useState('');
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
@@ -11,6 +11,17 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
     setToast(`${section} is coming soon!`);
     setTimeout(() => setToast(''), 3000);
     setIsMobileNavOpen(false); // close mobile menu on click
+  };
+
+  const handleLinkClick = (e, trackId) => {
+    e.preventDefault();
+    onTrackChange(trackId);
+    setIsMobileNavOpen(false);
+  };
+
+  const handleLinkClickWithToast = (e, trackId, section) => {
+    handleLinkClick(e, trackId);
+    handleComingSoon(e, section);
   };
 
   return (
@@ -30,11 +41,11 @@ export default function Navbar({ toggleSidebar, isSidebarOpen }) {
         </div>
 
         <div className={`${styles.rightSection} ${isMobileNavOpen ? styles.mobileNavOpen : ''}`}>
-          <a href="#javascript" className={styles.navLink} onClick={(e) => handleComingSoon(e, 'JavaScript')}>JavaScript</a>
-          <a href="#react-native" className={`${styles.navLink} ${styles.active}`}>React Native</a>
-          <a href="#redux" className={styles.navLink} onClick={(e) => handleComingSoon(e, 'Redux')}>Redux</a>
-          <a href="#navigation" className={styles.navLink} onClick={(e) => handleComingSoon(e, 'Navigation')}>Navigation</a>
-          <a href="#api" className={styles.navLink} onClick={(e) => handleComingSoon(e, 'API')}>API</a>
+          <a href="#javascript" className={`${styles.navLink} ${activeTrack === 'javascript' ? styles.active : ''}`} onClick={(e) => handleLinkClick(e, 'javascript')}>JavaScript</a>
+          <a href="#react-native" className={`${styles.navLink} ${activeTrack === 'react-native' ? styles.active : ''}`} onClick={(e) => handleLinkClick(e, 'react-native')}>React Native</a>
+          <a href="#redux" className={`${styles.navLink} ${activeTrack === 'redux' ? styles.active : ''}`} onClick={(e) => handleLinkClickWithToast(e, 'redux', 'Redux')}>Redux</a>
+          <a href="#navigation" className={`${styles.navLink} ${activeTrack === 'navigation' ? styles.active : ''}`} onClick={(e) => handleLinkClickWithToast(e, 'navigation', 'Navigation')}>Navigation</a>
+          <a href="#api" className={`${styles.navLink} ${activeTrack === 'api' ? styles.active : ''}`} onClick={(e) => handleLinkClickWithToast(e, 'api', 'API')}>API</a>
         </div>
 
         <button

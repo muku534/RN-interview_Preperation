@@ -3,24 +3,47 @@
 import { useState } from 'react';
 import styles from './Sidebar.module.css';
 
-const categories = [
-  {
-    title: 'Architecture Deep Dive',
-    topics: [
-      { id: 'old-arch', title: 'The Old Architecture' },
-      { id: 'new-arch', title: 'The New Architecture' },
-      { id: 'threads', title: 'The Three Threads' },
-      { id: 'metro', title: 'Metro Bundler' },
-      { id: 'hermes', title: 'Hermes Engine' },
-      { id: 'fast-refresh', title: 'Fast Refresh' },
-      { id: 'cli-expo', title: 'CLI vs Expo' }
-    ]
-  },
-];
+const trackCategories = {
+  'javascript': [
+    {
+      title: 'JavaScript Fundamentals',
+      topics: [
+        { id: 'js-map', title: 'map()' },
+        { id: 'js-filter', title: 'filter()' },
+        { id: 'js-find', title: 'find()' },
+        { id: 'js-findindex', title: 'findIndex()' },
+        { id: 'js-some', title: 'some()' },
+        { id: 'js-every', title: 'every()' },
+        { id: 'js-includes', title: 'includes()' },
+        { id: 'js-reduce', title: 'reduce()' },
+        { id: 'js-summary', title: 'Comparison & Traps' }
+      ]
+    }
+  ],
+  'react-native': [
+    {
+      title: 'Architecture Deep Dive',
+      topics: [
+        { id: 'old-arch', title: 'The Old Architecture' },
+        { id: 'new-arch', title: 'The New Architecture' },
+        { id: 'threads', title: 'The Three Threads' },
+        { id: 'metro', title: 'Metro Bundler' },
+        { id: 'hermes', title: 'Hermes Engine' },
+        { id: 'fast-refresh', title: 'Fast Refresh' },
+        { id: 'cli-expo', title: 'CLI vs Expo' }
+      ]
+    }
+  ],
+  'redux': [],
+  'navigation': [],
+  'api': []
+};
 
-export default function Sidebar({ activeTopic, setActiveTopic }) {
+export default function Sidebar({ activeTopic, setActiveTopic, activeTrack }) {
   // Keep the first category expanded by default
   const [expanded, setExpanded] = useState({ 0: true });
+
+  const categories = trackCategories[activeTrack] || [];
 
   const toggleCategory = (idx) => {
     setExpanded(prev => ({ ...prev, [idx]: !prev[idx] }));
