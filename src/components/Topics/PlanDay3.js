@@ -2,7 +2,9 @@ export default function PlanDay3() {
   return (
     <div className="topic-section">
       <h2>DAY 3 — Build the RN application</h2>
-      <p>No AI writing the implementation. <strong>You write.</strong> We'll establish:</p>
+      <p>No AI writing the implementation.</p>
+      <p>You write.</p>
+      <p>We'll establish:</p>
       <div className="code-block">
         <pre><code>{`src/ 
 ├── components/ 
@@ -15,15 +17,19 @@ export default function PlanDay3() {
 ├── utils/ 
 ├── constants/ 
 ├── theme/ 
-└── assets/ `}</code></pre>
+└── assets/`}</code></pre>
       </div>
-      <p>But we won't blindly copy that structure. You'll understand why each layer exists.</p>
+      <p>But we won't blindly copy that structure.</p>
+      <p>You'll understand why each layer exists.</p>
+      <p>Then:</p>
       <ul>
-        <li>Navigation</li>
-        <li>Reusable components</li>
-        <li>Forms</li>
-        <li>Loading states, error states, empty states</li>
-        <li>Basic persistence</li>
+        <li>navigation</li>
+        <li>reusable components</li>
+        <li>forms</li>
+        <li>loading states</li>
+        <li>error states</li>
+        <li>empty states</li>
+        <li>basic persistence</li>
       </ul>
     </div>
   );

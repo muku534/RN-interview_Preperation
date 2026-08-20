@@ -2,28 +2,55 @@ export default function PlanDay1() {
   return (
     <div className="topic-section">
       <h2>DAY 1 — JavaScript + RN foundation</h2>
-      <h3>JS — Practical</h3>
-      <p>We start where we stopped: <code>map</code>, <code>filter</code>, <code>find</code>, <code>findIndex</code>, <code>some</code>, <code>every</code>, <code>includes</code>, <code>reduce</code>, <code>sort</code>, <code>slice</code>, <code>splice</code>, <code>flat</code>, <code>flatMap</code>.</p>
-      <p>But no 2-hour lectures on each method. You'll learn the behavior quickly → solve problems → combine methods → solve real API-data transformations.</p>
+      <h3>JS — practical</h3>
+      <p>We start where we stopped:</p>
       <ul>
-        <li>Immutability</li>
-        <li>Object/array transformations</li>
-        <li>Common coding-round patterns</li>
+        <li>map</li>
+        <li>filter</li>
+        <li>find</li>
+        <li>findIndex</li>
+        <li>some</li>
+        <li>every</li>
+        <li>includes</li>
+        <li>reduce</li>
+        <li>sort</li>
+        <li>slice</li>
+        <li>splice</li>
+        <li>flat</li>
+        <li>flatMap</li>
+      </ul>
+      <p>But no 2-hour lectures on each method.</p>
+      <p>You'll learn the behavior quickly → solve problems → combine methods → solve real API-data transformations.</p>
+      
+      <p>Then:</p>
+      <ul>
+        <li>immutability</li>
+        <li>object/array transformations</li>
+        <li>common coding-round patterns</li>
       </ul>
 
-      <h3>RN — Architecture Deep Dive</h3>
-      <ul>
-        <li>Old Architecture</li>
-        <li>Bridge</li>
-        <li>Why it became a bottleneck</li>
-        <li>JSI</li>
-        <li>TurboModules</li>
-        <li>Codegen</li>
-        <li>Fabric</li>
-        <li>Hermes</li>
-        <li>Bridgeless / New Architecture</li>
-      </ul>
-      <p><em>And I will make you explain it without memorized wording.</em></p>
+      <h3>RN — architecture</h3>
+      <p>Deep dive:</p>
+      <div className="code-block" style={{background: 'transparent', padding: 0}}>
+        <pre style={{background: 'transparent', margin: 0}}><code>Old Architecture 
+    ↓ 
+Bridge 
+    ↓ 
+Why it became a bottleneck 
+    ↓ 
+JSI 
+    ↓ 
+TurboModules 
+    ↓ 
+Codegen 
+    ↓ 
+Fabric 
+    ↓ 
+Hermes 
+    ↓ 
+Bridgeless / New Architecture</code></pre>
+      </div>
+      <p>And I will make you explain it without memorized wording.</p>
     </div>
   );
 }
